@@ -1,13 +1,8 @@
 from django.shortcuts import render
-from django.http import HttpResponse
-
-
-def calculate():
-    x = 1
-    y = 2
-    return x
-
+from django.db import connection
+from store.models import Order,OrderItem,Product,Customer
 
 def say_hello(request):
-    x = calculate()
-    return render(request, 'hello.html', {'name': 'Mosh'})
+   with connection.cursor() as cursor:
+      cursor.callproc('get_costumers',[1,2,'a'])
+   return render(request,'hello.html',{'name':'Surendra'}) 
