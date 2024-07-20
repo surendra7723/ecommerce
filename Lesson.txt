@@ -1,0 +1,68 @@
+REST-->Representational state transfer
+    -->fast,scalable,easy to unserstand, easy to change
+    3 concepts of django
+    -->Resources
+    :object in application(prodect,collection,cart) accessed by using URL
+        pattern is the attribute of RESTFUL apis
+    Resource Representation
+
+
+
+    -->Representations:
+    
+            XML--
+            JSON-- modern format 
+                        {
+                        "status": "success",
+                        "data": {
+                            "id": 1,
+                            "name": "Product 1",
+                            "description": "This is a sample product.",
+                            "price": 9.99,
+                            "stock": 100,
+                            "product_array":[]
+                            
+
+                        }
+                        }
+            HTTP-- 
+        Internally  resource is   identified by the object or instance of python class 
+ 
+    -->HTTP Methods:
+         post
+         put 
+         get 
+         patch
+
+decorator 
+
+-->creating endpoints
+    1.create a view function that takes (request) and gives HttpResponse 
+    2.create a url in application
+
+    3. create  a main url   path('appname/',include('appname.urls')),
+    4. import api_view function from decorator 
+    5. add @api_view() before view function the request object will be replaced by rest framewok request
+    6. replace HttpResponse with rest_framework response
+
+
+
+
+     
+    4. from rest_framework import response class 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
