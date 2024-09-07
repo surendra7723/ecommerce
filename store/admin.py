@@ -76,9 +76,9 @@ class CollectionAdmin(admin.ModelAdmin):
                'collection__id':str(collection.id)
             }))
         return format_html('<a href="{}">{}</a>',url,collection.products_count)
-    def get_queryset(self, request ) :
+    def get_queryset(self, request) :
         return super().get_queryset(request).annotate(
-            products_count=Count('product')
+            products_count=Count('products')
         )
 @admin.register(models.Customer)
 class CustomerAdmin(admin.ModelAdmin):
